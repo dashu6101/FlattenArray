@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Flatten Array</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+	</head>
+	<body>
+		<div class="row">
+		<div class="container">
+		<div class="col s4"></div>
+		<div class="col s4">
+			<div class="input-field">
+			<input class="validate" type="text" name="flattenarray" id="flattenarray" />  
+			<label for="flattenarray">Enter array which you want to flatten</label>
+			</div>
+			<div class="center-btn center-align">
+			<button onclick="doFlatten()" class="btn btn-default" >Flatten Array</button>
+			</div>	
+		</div>
+		<div class="col s4"></div>
+		</div>
+		</div>
+		<script type="text/javascript"  src="js/jquery.min.js"> </script>
+		<script type="text/javascript"  src="js/materialize.min.js"> </script>
+		<script type="text/javascript">
+		  function doFlatten(){
+				var inValue = document.getElementById('flattenarray').value;
+				if(inValue != '' && checkJson(inValue)){
+					  var inarrayy = new Array(JSON.parse(inValue));
+					  var flatArray  = inarrayy.reduce(function(a, b) {
+							  return a.concat(b);
+							});
+							alert(flatArray);		
+				}
+				else{
+					alert('please enter valid array');
+				}
+			}
+			function checkJson(string) {
+				try { JSON.parse(string); return true} catch (e) {return false;}
+				return false;
+			}
+		</script>
+			
+	</body>
+</html>
+
