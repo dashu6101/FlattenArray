@@ -1,0 +1,2 @@
+# FlattenArray
+Flatten Nested Array 
